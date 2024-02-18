@@ -1,2 +1,8 @@
 server:
   port: 9125
+
+logquality:
+  file: true
+  filebeat: false
+  tcp: true
+  cassandra: true
