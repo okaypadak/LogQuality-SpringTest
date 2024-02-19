@@ -4,5 +4,13 @@ server:
 logquality:
   file: true
   filebeat: false
-  tcp: true
-  cassandra: true
+  logstash:
+    connection: true
+    host: localhost
+    port: 5044
+  cassandra:
+    connection: true
+    host: localhost
+    port: 9042
+    keyspace: logquality
+    tableName: test
