@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class TestService {
 
-    public String test(){
-        log.info("Service çalıştı");
-        return "Çalıştı";
+    public ResponseDTO test(RequestDTO request){
+        log.info(request.getIstek()+" istek geldi, service çalıştı");
+        return ResponseDTO.builder().Detail("Success").build();
     }
 }

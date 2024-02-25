@@ -6,6 +6,8 @@ import dev.padak.LogQualityDepency;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 
 @Configuration
 @EnableAspectJAutoProxy
@@ -14,6 +16,7 @@ public class AppConfig {
 
     @Autowired
     LogQualityConfig logQualityConfig;
+
     @Bean
     public void LogConfiguration() {
         logQualityConfig.configureLogback((LoggerContext) LoggerFactory.getILoggerFactory());

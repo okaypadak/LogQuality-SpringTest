@@ -5,7 +5,7 @@ logquality:
   file: true
   filebeat: false
   logstash:
-    connection: false
+    connection: true
     host: localhost
     port: 5044
   cassandra:
@@ -14,3 +14,13 @@ logquality:
     port: 9042
     keyspace: logquality
     tableName: test
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: metrics
+
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.actuate.autoconfigure.health.HealthEndpointAutoConfiguration
