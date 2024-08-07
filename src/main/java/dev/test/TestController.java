@@ -3,10 +3,7 @@ package dev.test;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -19,12 +16,10 @@ public class TestController {
 
     @GetMapping("/yap")
     public ResponseEntity<ResponseDTO> calistir(@RequestBody RequestDTO request) {
-
-
         return ResponseEntity.ok(testService.test(request));
     }
 
-    @GetMapping("/hata")
+    @PostMapping("/hata")
     public ResponseEntity<ResponseDTO> hata(@RequestBody RequestDTO request) {
 
         try {
@@ -36,7 +31,7 @@ public class TestController {
         return ResponseEntity.ok(testService.test(request));
     }
 
-    @GetMapping("/hata_iki")
+    @PostMapping("/hata_iki")
     public ResponseEntity<ResponseDTO> hata_iki(@RequestBody RequestDTO request) {
 
         int a = 5 / 0;

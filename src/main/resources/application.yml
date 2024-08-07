@@ -2,25 +2,16 @@ server:
   port: 9125
 
 logquality:
-  file: true
+  project_name: testapp
+  file: false
   filebeat: false
   logstash:
     connection: true
-    host: localhost
-    port: 5044
-  cassandra:
-    connection: false
-    host: localhost
-    port: 9042
-    keyspace: logquality
-    tableName: test
+    host: 192.168.1.15
+    port: 31501
 
 management:
   endpoints:
     web:
       exposure:
         include: metrics
-
-spring:
-  autoconfigure:
-    exclude: org.springframework.boot.actuate.autoconfigure.health.HealthEndpointAutoConfiguration
